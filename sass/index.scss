@@ -1,0 +1,397 @@
+@import "variables";
+@import "resets";
+
+.container {
+  width: 60%;
+  height: 60%;
+  background-color: $White;
+  display: flex;
+  border-radius: 12px;
+
+  @include lg-screen {
+    width: 80%;
+  }
+
+  @include small-screen {
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+  }
+}
+
+.calc-container {
+  width: 50%;
+  height: 100%;
+  padding: 25px;
+  background-color: $White;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+
+  @include small-screen {
+    width: 100%;
+  }
+
+  header {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+
+    @include small-screen {
+      flex-direction: column;
+      justify-content: left;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      padding: 10px 0;
+
+      @include small-screen {
+        padding: 0;
+      }
+    }
+
+    .clear-btn {
+      background: none;
+      border: none;
+      font-size: 14px;
+      padding: 15px 0;
+      text-decoration: underline;
+      color: $Slate-900;
+      cursor: pointer;
+
+      @include small-screen {
+        padding: 5px 0;
+      }
+    }
+  }
+
+  form {
+    width: 100%;
+    height: 85%;
+    // border: 1px solid red;
+
+    label {
+      color: $Slate-900;
+    }
+
+    .amount-field {
+      width: 100%;
+      height: 25%;
+      padding: 5px 0;
+      // border: 2px solid green;
+
+      .sign-input {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: space-between;
+        margin: 7px 0 0 0;
+        border-radius: 3px;
+        outline: 1px solid $Slate-900;
+        cursor: pointer;
+
+        .amount {
+          width: 90%;
+          height: auto;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          // border: 1px solid green;
+        }
+
+        .eurosign {
+          width: 8%;
+          height: auto;
+          text-align: center;
+          font-weight: bold;
+          font-size: 1.2rem;
+          background-color: $Slate-100;
+          padding: 5px;
+        }
+      }
+    }
+  }
+
+  .input {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: space-between;
+    // border: 1px solid blue;
+
+    .term {
+      width: 48%;
+      height: 90%;
+      margin: 5px 0;
+      // border: 1px solid red;
+
+      .term-field {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        padding-left: 5px;
+        outline: 1px solid $Slate-900;
+        border-radius: 3px;
+        margin: 5px 0 0 0;
+        cursor: pointer;
+
+        .year {
+          width: 67%;
+          height: auto;
+          border: none;
+          outline: none;
+          cursor: pointer;
+        }
+
+        .years {
+          width: 33%;
+          height: auto;
+          text-align: center;
+          font-weight: bold;
+          font-size: 1.2rem;
+          background-color: $Slate-100;
+          padding: 5px;
+        }
+      }
+    }
+
+    .rates {
+      width: 48%;
+      height: 90%;
+      margin: 5px 0;
+      // border: 1px solid red;
+
+      .rate-field {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        padding-left: 5px;
+        outline: 1px solid $Slate-900;
+        border-radius: 3px;
+        margin: 5px 0 0 0;
+        cursor: pointer;
+
+        .rate {
+          width: 80%;
+          height: auto;
+          border: none;
+          outline: none;
+          cursor: pointer;
+        }
+
+        .percent {
+          width: 20%;
+          height: auto;
+          text-align: center;
+          font-weight: bold;
+          font-size: 1.2rem;
+          background-color: $Slate-100;
+          padding: 5px;
+        }
+      }
+    }
+  }
+
+  .radio-duo {
+    width: 100%;
+    height: 25%;
+    margin: 5px 0;
+    // border: 2px solid magenta;
+
+    .radio-btns {
+      width: 100%;
+      height: 40%;
+      padding: 7px;
+      margin: 5px 0 0 0;
+      font-weight: bold;
+      border: 1px solid $Slate-900;
+      border-radius: 3px;
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid $Lime;
+      }
+
+      input[type="radio"] {
+        appearance: none;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        margin: 0 10px;
+        outline-offset: 3px;
+        outline: 1px solid $Lime;
+        cursor: pointer;
+      }
+
+      input[type="radio"]:checked {
+        background-color: $Lime;
+      }
+    }
+  }
+
+  .cal-btn {
+    width: 60%;
+    height: 12%;
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    background-color: $Lime;
+    border-radius: 18px;
+
+    &:hover {
+      background-color: $lighter-lime;
+    }
+
+    @include lg-screen {
+      width: 90%;
+    }
+
+    @include small-screen {
+      width: 70%;
+      margin: 15px 0;
+    }
+
+    .img {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+    }
+
+    .cal {
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}
+
+.result-box {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $Slate-900;
+  color: $White;
+  border-bottom-left-radius: 12%;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  // border: 1px solid navajowhite;
+
+  @include small-screen {
+    width: 100%;
+    border-bottom-left-radius: 0%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .result {
+    // display: none;
+    width: 90%;
+    height: 70%;
+    padding: 25px;
+    // border: 1px solid pink;
+
+    .img1 {
+      width: 60%;
+      height: 60%;
+      margin: 0 3.5rem;
+    }
+
+    h2 {
+      text-align: center;
+      padding: 15px;
+    }
+
+    p {
+      color: $Slate-100;
+
+      @include lg-screen {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .results {
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    display: none;
+    // border: 2px solid white;
+
+    h2 {
+      padding: 10px;
+    }
+
+    p {
+      color: $Slate-300;
+    }
+
+    .repay {
+      width: 100%;
+      height: 60%;
+      margin: 2rem 0;
+      // padding: 15px;
+      background-color: rgba(0, 0, 0, 0.563);
+      border-radius: 12px;
+      // border: 2px solid blue;
+
+      .lime {
+        width: 100%;
+        height: 2%;
+        background-color: $Lime;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      }
+
+      .monthly {
+        // padding: 10px;
+        width: 90%;
+        height: 40%;
+        margin: 10px auto;
+        border-bottom: 1px solid $Slate-300;
+        // border: 1px solid gold;
+      }
+
+      .installment {
+        padding: 15px;
+        font-size: 3rem;
+        color: $Lime;
+        font-weight: bold;
+      }
+
+      .total-block {
+        width: 90%;
+        height: 40%;
+        margin: 10px auto;
+        // border: 1px solid gold;
+
+        .total-text {
+          padding: 10px;
+        }
+      }
+
+      .total {
+        font-size: 1.3rem;
+        padding: 0 20px;
+      }
+    }
+  }
+}
+
+.error-message-1,
+.error-message-2,
+.error-message-3,
+.error-message-4 {
+  color: red;
+  display: none;
+}
+
+.calc-container form:nth-child(3) .radio-duo .radio-btns.active {
+  background-color: $Lime;
+}
